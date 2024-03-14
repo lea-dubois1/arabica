@@ -8,6 +8,14 @@ typedef struct {
     char *pop;
 }Command;
 
+typedef struct {
+    char *instruction;
+    char *arg;
+    char *arg2;
+}Code;
+
 void parsingCSV(Command* commands);
+
+void parsingCodeSource(char* file, Code* code);
 
 #endif

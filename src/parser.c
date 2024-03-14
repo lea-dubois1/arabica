@@ -25,4 +25,32 @@ void parsingCSV(Command* commands)
 
         counter++;
     }
+    fclose(instructions);
+}
+
+
+void parsingCodeSource(char* file, Code* code){
+
+    FILE *codeSource = fopen(file, "r");
+    char str[50];
+    int counter = 0;
+
+    if(codeSource == NULL)
+    {
+        printf("Cannot open %s file", file);
+        exit(0);
+    }
+
+    while(fgets(str, 50, codeSource)){
+
+        code[counter].instruction = strdup(strtok(str, " "));
+        code[counter].arg = strdup(strtok(NULL, "\n"));
+        code[counter].arg2 = NULL;
+
+        printf("%s %s %s\n", code[counter].instruction, code[counter].arg, code[counter].arg2);
+
+        counter++;
+    }
+
+    fclose(codeSource);
 }
