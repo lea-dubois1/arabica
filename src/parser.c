@@ -43,12 +43,27 @@ void parsingCodeSource(char* file, Code* code){
 
     while(fgets(str, 50, codeSource)){
 
-        code[counter].instruction = strdup(strtok(str, " "));
-        code[counter].arg = strdup(strtok(NULL, "\n"));
-        code[counter].arg2 = NULL;
+        int count_word = count_space(str);
 
-        printf("%s %s %s\n", code[counter].instruction, code[counter].arg, code[counter].arg2);
-
+        switch(count_word) {
+            case 0:
+                code[counter].instruction = strdup(strtok(str, "\n"));
+                code[counter].arg = NULL;
+                code[counter].arg2 = NULL;
+               break;
+            case 1:
+                code[counter].instruction = strdup(strtok(str, " "));
+                code[counter].arg = strdup(strtok(NULL, "\n"));
+                code[counter].arg2 = NULL;
+                break;
+            case 2:
+                code[counter].instruction = strdup(strtok(str, " "));
+                code[counter].arg = strdup(strtok(NULL, " "));
+                code[counter].arg2 = strdup(strtok(NULL, "\n"));
+                break;
+            default:
+                printf("They're must be an error with the parsing of the file");
+        }
         counter++;
     }
 

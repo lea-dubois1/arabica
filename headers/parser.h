@@ -1,6 +1,9 @@
 #ifndef PARSER
 #define PARSER
 
+#include "main.h"
+#include "utils.h"
+
 typedef struct {
 	char *description;
     char *instruction;
