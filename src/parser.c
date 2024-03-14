@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-Command* parsing(Command* commands)
+void parsingCSV(Command* commands)
 {
     char *txt = "instructions.csv";
     FILE *instructions = fopen(txt, "r");
@@ -18,19 +18,11 @@ Command* parsing(Command* commands)
 
     while(fgets(str, 50, instructions))
     {
-        commands[counter].description = strtok(str, ",");
-        commands[counter].instruction = strtok(NULL, ",");
-        commands[counter].args = strtok(NULL, ",");
-        commands[counter].pop = strtok(NULL, "\n");
-
-        printf("%s, %s, %s, %s\n", commands[counter].description, commands[counter].instruction,
-               commands[counter].args, commands[counter].pop);
+        commands[counter].description = strdup(strtok(str, ","));
+        commands[counter].instruction = strdup(strtok(NULL, ","));
+        commands[counter].args = strdup(strtok(NULL, ","));
+        commands[counter].pop = strdup(strtok(NULL, "\n"));
 
         counter++;
     }
-//            printf("%d : %s, %s, %s, %s\n",counter-1, commands[counter-1].description, commands[counter-1].instruction,
-//                   commands[counter-1].args, commands[counter-1].pop);
-//    fclose(instructions);
-
-    return commands;
 }
