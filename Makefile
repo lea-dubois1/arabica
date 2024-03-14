@@ -3,7 +3,7 @@ EXEC = arabica
 CFLAGS = -Wall -Werror -Wextra -g3
 OBJDIR = obj/
 SRCDIR = src/
-SRC = file.c
+SRC = main.c file.c parser.c
 SRCS = $(addprefix $(SRCDIR), $(SRC))
 OBJ = $(SRCS:$(SRCDIR)%.c=$(OBJDIR)%.o)
 

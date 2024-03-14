@@ -4,8 +4,10 @@
 typedef struct {
 	char *description;
     char *instruction;
-    char args;
-    char pop;
+    char *args;
+    char *pop;
 }Command;
+
+Command* parsing(Command* commands);
 
 #endif
