@@ -14,9 +14,9 @@ int main(int argc, char **argv)
     parsingCodeSource(argv[1], code);
 
 
-//    for (int i = 0; i < 29; ++i) {
-//        printf("%d : %s, %s, %s, %s, %s\n",i, commands[i].description, commands[i].instruction, commands[i].args, commands[i].pop, commands[i].nbArgs);
-//    }
+    for (int i = 0; i < 29; ++i) {
+        printf("%d : %s, %s, %s, %s, %s\n",i, commands[i].description, commands[i].instruction, commands[i].args, commands[i].pop, commands[i].nbArgs);
+    }
 //
 //    for (int i = 0; i < 5; ++i) {
 //        printf("%d : %s, %s, %s\n",i, code[i].instruction, code[i].arg, code[i].arg2);
