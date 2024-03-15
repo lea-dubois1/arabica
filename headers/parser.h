@@ -9,6 +9,7 @@ typedef struct {
     char *instruction;
     char *args;
     char *pop;
+    char *nbArgs;
 }Command;
 
 typedef struct {

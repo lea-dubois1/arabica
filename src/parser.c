@@ -21,7 +21,8 @@ void parsingCSV(Command* commands)
         commands[counter].description = strdup(strtok(str, ","));
         commands[counter].instruction = strdup(strtok(NULL, ","));
         commands[counter].args = strdup(strtok(NULL, ","));
-        commands[counter].pop = strdup(strtok(NULL, "\n"));
+        commands[counter].pop = strdup(strtok(NULL, ","));
+        commands[counter].nbArgs = strdup(strtok(NULL, "\n"));
 
         counter++;
     }

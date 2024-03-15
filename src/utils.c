@@ -1,7 +1,3 @@
-//
-// Created by corentin on 14/03/24.
-//
-
 #include "../headers/utils.h"
 
 
